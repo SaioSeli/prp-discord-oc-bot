@@ -1,0 +1,65 @@
+{
+    "ID": 1065794361343885313,
+    "OCs": {
+        "kubfu": {
+            "Name": "Kenta",
+            "FullName": "Kenta",
+            "Species": "Kubfu",
+            "Pronouns": "He/Him",
+            "Age": 19,
+            "Type": [
+                "Fire",
+                "Fighting",
+                "Dark"
+            ],
+            "Stats": {
+                "BASE": {
+                    "HP": 80,
+                    "ATK": 120,
+                    "DEF": 80,
+                    "SPC": 50,
+                    "RES": 80,
+                    "AGI": 110
+                },
+                "IV": {
+                    "HP": 31,
+                    "ATK": 31,
+                    "DEF": 31,
+                    "SPC": 0,
+                    "RES": 31,
+                    "AGI": 31
+                },
+                "EV": {
+                    "HP": 0,
+                    "ATK": 252,
+                    "DEF": 0,
+                    "SPC": 0,
+                    "RES": 6,
+                    "AGI": 252
+                }
+            },
+            "Ability": "Unseen Fist",
+            "Innates": {
+                "Innate1": "Firey Spirit",
+                "Innate2": "Flame Body",
+                "Innate3": "Lazy Fucker (Unaware)"
+            },
+            "Item1": "Focus Sash",
+            "Item2": "Empty",
+            "Moves": {
+                "Normal": [
+                    "<:TypeFire:1233102381261131981> Fire Punch",
+                    "<:TypeFighting:1233102377419014184> Close Combat",
+                    "<:TypeDark:1233102366002118676> Pursuit",
+                    "<:TypeFlying:1233102383374925905> Aerial Ace",
+                    "<:TypeFighting:1233102377419014184> Reversal",
+                    "<:TypeFighting:1233102377419014184> Bulk Up"
+                ],
+                "Ultimate": [
+                    "<:TypeFire:1233102381261131981> Fists of Fury"
+                ]
+            },
+			"Nature": ""
+        }
+    }
+}

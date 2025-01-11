@@ -1,0 +1,185 @@
+{
+    "ID": 749252032065699911,
+    "OCs": {
+        "saio": {
+            "Name": "Saio",
+            "FullName": "Saio 'Snowscape' Tsukimaya",
+            "Species": "Glaceon",
+            "Pronouns": "She/They",
+            "Age": "20",
+            "Type": [
+                "Ice",
+                "Dark",
+                "Stellar"
+            ],
+            "Stats": {
+                "BASE": {
+                    "HP": 65,
+                    "ATK": 130,
+                    "DEF": 110,
+                    "SPC": 60,
+                    "RES": 95,
+                    "AGI": 65
+                },
+                "IV": {
+                    "HP": 31,
+                    "ATK": 31,
+                    "DEF": 31,
+                    "SPC": 31,
+                    "RES": 31,
+                    "AGI": 31
+                },
+                "EV": {
+                    "HP": 0,
+                    "ATK": 252,
+                    "DEF": 128,
+                    "SPC": 0,
+                    "RES": 2,
+                    "AGI": 128
+                }
+            },
+            "Ability": "Simple",
+            "Innates": {
+                "Innate1": "Diamond Scales",
+                "Innate2": "North Gale",
+                "Innate3": "Technician"
+            },
+            "Item1": "Icicle Knife",
+            "Item2": "Empty",
+            "Moves": {
+                "Normal": [
+                    "<:TypeIce:1327612517400449066> Icicle Spear",
+                    "<:TypeDark:1327612388127539304> Knock Off",
+                    "<:TypeFighting:1327612439310761984> Power-Up Punch",
+                    "<:TypeGrass:1327612487679344673> Trailblaze",
+                    "<:TypeNormal:1327612531883376681> Facade",
+                    "<:TypeDark:1327612388127539304> Bite"
+                ],
+                "Ultimate": [
+                    "<:TypeIce:1327612517400449066> Glacial Pounce"
+                ]
+            },
+            "Nature": "Timid"
+        },
+        "dylan": {
+            "Name": "Dylan",
+            "FullName": "Dylan",
+            "Species": "Meowscarada",
+            "Pronouns": "He/Him",
+            "Age": "22",
+            "Type": [
+                "Grass",
+                "Dark",
+                "Stellar"
+            ],
+            "Stats": {
+                "BASE": {
+                    "HP": 76,
+                    "ATK": 110,
+                    "DEF": 70,
+                    "SPC": 81,
+                    "RES": 70,
+                    "AGI": 123
+                },
+                "IV": {
+                    "HP": 31,
+                    "ATK": 31,
+                    "DEF": 31,
+                    "SPC": 31,
+                    "RES": 31,
+                    "AGI": 31
+                },
+                "EV": {
+                    "HP": 2,
+                    "ATK": 0,
+                    "DEF": 128,
+                    "SPC": 0,
+                    "RES": 128,
+                    "AGI": 252
+                }
+            },
+            "Ability": "Opportunist",
+            "Innates": {
+                "Innate1": "Dancer",
+                "Innate2": "Leaf Guard",
+                "Innate3": "Protean"
+            },
+            "Item1": "Stat Boost Dice",
+            "Item2": "Empty",
+            "Moves": {
+                "Normal": [
+                    "<:TypeGrass:1327612487679344673> Trailblaze",
+                    "<:TypeDark:1327612388127539304> Lash Out",
+                    "<:TypeWater:1327612601798099044> Chilling Water",
+                    "<:TypeIce:1327612517400449066> Triple Axel",
+                    "<:TypeNormal:1327612531883376681> Tidy Up",
+                    "<:TypeFlying:1327612458541649922> Acrobatics"
+                ],
+                "Ultimate": [
+                    "<:TypeGrass:1327612487679344673> Entangled Parade"
+                ]
+            },
+            "Nature": "Adamant"
+        },
+        "pheya": {
+            "Name": "Pheya",
+            "FullName": "Pheya 'Stormsurge'",
+            "Species": "Primarina",
+            "Pronouns": "He/They",
+            "Age": "32",
+            "Type": [
+                "Water",
+                "Fairy",
+                "Water"
+            ],
+            "Stats": {
+                "BASE": {
+                    "HP": 80,
+                    "ATK": 126,
+                    "DEF": 74,
+                    "SPC": 60,
+                    "RES": 116,
+                    "AGI": 74
+                },
+                "IV": {
+                    "HP": 31,
+                    "ATK": 31,
+                    "DEF": 31,
+                    "SPC": 31,
+                    "RES": 31,
+                    "AGI": 31
+                },
+                "EV": {
+                    "HP": 0,
+                    "ATK": 252,
+                    "DEF": 0,
+                    "SPC": 6,
+                    "RES": 0,
+                    "AGI": 252
+                }
+            },
+            "Ability": "Surgic Sheen",
+            "Innates": {
+                "Innate1": "Sharpness",
+                "Innate2": "Moxie",
+                "Innate3": "Swift Swim"
+            },
+            "Item1": "Tera Katana",
+            "Item2": "Pheyarinium-Z",
+            "Moves": {
+                "Normal": [
+                    "<:TypeWater:1327612601798099044> Liquidation",
+                    "<:TypeFairy:1327612429244432435> Moonblast",
+                    "<:TypePsychic:1327612556558336051> Psychic Noise",
+                    "<:TypeIce:1327612517400449066> Ice Spinner",
+                    "<:TypeGrass:1327612487679344673> Leaf Blade",
+                    "<:TypeDark:1327612388127539304> Night Slash"
+                ],
+                "Ultimate": [
+                    "<:TypeFairy:1327612429244432435> Spacetime Soulsurge"
+                ]
+            },
+            "Nature": "Jolly"
+        }
+    }
+}

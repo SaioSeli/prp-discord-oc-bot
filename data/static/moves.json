@@ -1,0 +1,116 @@
+{
+    "icicle spear": {
+        "Name": "Icicle Spear",
+        "Type": "Ice",
+        "Category": "Physical",
+        "Power": 25,
+        "Desc": "DESC_ISPEAR",
+        "PP": 25,
+        "ACC": 100,
+        "Target": "a singular adjacent Pokemon",
+        "Effects": [
+            "Hits 2-5 times."
+        ],
+        "Ultimate": false,
+        "UltimateChr": ""
+    },
+    "glacial pounce": {
+        "Name": "Glacial Pounce",
+        "Type": "Ice",
+        "Category": "Physical",
+        "Power": 110,
+        "Desc": "The user leaps at the target and lands gracefully with icy energy, forming an icy stage that slows opponents.",
+        "PP": 1,
+        "ACC": 101,
+        "Target": "all adjacent foes",
+        "Effects": [
+            "Foes 10% Flinch",
+            "Foes 70% Frostbite",
+            "Foes 100% -1 Speed",
+            "Boosted by Sharpness"
+        ],
+        "Ultimate": true,
+        "UltimateChr": "Saio"
+    },
+    "trailblaze": {
+        "Name": "Trailblaze",
+        "Type": "Grass",
+        "Category": "Physical",
+        "Power": 50,
+        "Desc": "The user attacks suddenly as if leaping out from tall grass. The user's nimble footwork boosts its Speed stat.",
+        "PP": 20,
+        "ACC": 100,
+        "Target": "a singular adjacent Pokemon",
+        "Effects": [
+            "User 100% +1 Speed"
+        ],
+        "Ultimate": false,
+        "UltimateChr": ""
+    },
+    "fire punch": {
+        "Name": "Fire Punch",
+        "Type": "Fire",
+        "Category": "Physical",
+        "Power": 75,
+        "Desc": "10% to burn",
+        "PP": 15,
+        "ACC": 100,
+        "Target": "a singular adjacent Pokemon",
+        "Effects": [
+            "Target 10% Burn",
+            "Boosted by Iron Fist"
+        ],
+        "Ultimate": false,
+        "UltimateChr": ""
+    },
+    "close combat": {
+        "Name": "Close Combat",
+        "Type": "Fighting",
+        "Category": "Physical",
+        "Power": 120,
+        "Desc": "Lowers both defenses by one stage.",
+        "PP": 8,
+        "ACC": 100,
+        "Target": "a singlular adjacent Pokemon",
+        "Effects": [
+            "Self 100% -1 Defense",
+            "Self 100% -1 Special Defense",
+            "Boosted by Iron Fist"
+        ],
+        "Ultimate": false,
+        "UltimateChr": ""
+    },
+    "spacetime soulsurge": {
+        "Name": "Spacetime Soulsurge",
+        "Type": "Fairy",
+        "Category": "Physical",
+        "Power": 170,
+        "Desc": "The user slashes through the foe with a spacetime-splitting cut, purifying everything nearby while dealing damage.",
+        "PP": 1,
+        "ACC": 101,
+        "Target": "a singlular adjacent Pokemon",
+        "Effects": [
+            "Field 100% Heal Status",
+            "Self 100% +1 Speed",
+            "Self Recover 50% Damage",
+            "Boosted by Sharpness"
+        ],
+        "Ultimate": true,
+        "UltimateChr": "Pheya"
+    },
+    "fists of fury": {
+        "Name": "Fists of Fury",
+        "Type": "Fire",
+        "Category": "Physical",
+        "Power": 150,
+        "Desc": "User releases a lethal barrage of burning fists, ignoring abilities and stat stages.",
+        "PP": 1,
+        "ACC": 101,
+        "Target": "Singular",
+        "Effects": [
+            "Ignores abilities and stat boosts."
+        ],
+        "Ultimate": true,
+        "UltimateChr": "Kenta"
+    }
+}

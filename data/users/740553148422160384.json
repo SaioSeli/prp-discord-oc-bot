@@ -1,0 +1,65 @@
+{
+    "ID": 740553148422160384,
+    "OCs": {
+        "stella": {
+            "Name": "Stella",
+            "FullName": "Stella Angelica",
+            "Species": "Eevee",
+            "Pronouns": "She/Her",
+            "Age": 18,
+            "Type": [
+                "Normal",
+                "",
+				""
+            ],
+            "Stats": {
+                "BASE": {
+                    "HP": 55,
+                    "ATK": 55,
+                    "DEF": 50,
+                    "SPC": 45,
+                    "RES": 65,
+                    "AGI": 55
+                },
+                "IV": {
+                    "HP": 0,
+                    "ATK": 0,
+                    "DEF": 0,
+                    "SPC": 0,
+                    "RES": 0,
+                    "AGI": 0
+                },
+                "EV": {
+                    "HP": 0,
+                    "ATK": 0,
+                    "DEF": 0,
+                    "SPC": 0,
+                    "RES": 0,
+                    "AGI": 0
+                }
+            },
+            "Ability": "Fur Coat",
+            "Innates": {
+                "Innate1": "None",
+                "Innate2": "None",
+                "Innate3": "None"
+            },
+            "Item1": "Booster Evolution Neckalce",
+            "Item2": "Empty",
+            "Moves": {
+                "Normal": [
+                    "Quick Attack",
+                    "Swift",
+                    "Shadow Ball",
+                    "Calm Mind",
+                    "Helping Hand",
+                    "None"
+                ],
+                "Ultimate": [
+                    "Extreme Eevoboost"
+                ]
+            },
+			"Nature": ""
+        }
+    }
+}
