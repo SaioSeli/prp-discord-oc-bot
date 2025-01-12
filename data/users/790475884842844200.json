@@ -1,0 +1,65 @@
+{
+    "ID": 790475884842844200,
+    "OCs": {
+        "karla": {
+            "Name": "Karla",
+            "FullName": "Karla Swiftkick",
+            "Species": "Kubfu",
+            "Pronouns": "She/they",
+            "Age": 19,
+            "Type": [
+                "Fighting",
+                "",
+                "Ice"
+            ],
+            "Stats": {
+                "BASE": {
+                    "HP": 0,
+                    "ATK": 0,
+                    "DEF": 0,
+                    "SPC": 0,
+                    "RES": 0,
+                    "AGI": 0
+                },
+                "IV": {
+                    "HP": 20,
+                    "ATK": 20,
+                    "DEF": 20,
+                    "SPC": 20,
+                    "RES": 20,
+                    "AGI": 20
+                },
+                "EV": {
+                    "HP": 0,
+                    "ATK": 0,
+                    "DEF": 0,
+                    "SPC": 0,
+                    "RES": 0,
+                    "AGI": 0
+                }
+            },
+            "Ability": "None",
+            "Innates": {
+                "Innate1": "None",
+                "Innate2": "None",
+                "Innate3": "None"
+            },
+            "Item1": "Empty",
+            "Item2": "Empty",
+            "Moves": {
+                "Normal": [
+                    "Metal claw",
+                    "Ice punch",
+                    "Reversal",
+                    "Close combat",
+                    "Aerial ace",
+                    "Brick break"
+                ],
+                "Ultimate": [
+                    "None"
+                ]
+            },
+            "Nature": ""
+        }
+    }
+}

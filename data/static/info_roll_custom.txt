@@ -1,0 +1,8 @@
+## ---=== Fun Commands ===---
+## `/roll_custom`
+This is a (better, objectively,) dice roll simulator.
+
+Parameters:
+- min: `Type: Int.` This is the **lowest number the dice can reach**.
+- max: `Type: Int.` This is the **highest number the dice can reach**.
+- rolls: `Type: Int.` This is the amount of **dices that are rolled**.

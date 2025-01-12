@@ -1,0 +1,9 @@
+## ---=== Battle Commands ===---
+## `/damage_calc`
+This command calculates **approximate damage** with a few numbers.
+
+Parameters:
+- movepower: `Type: Int.` This is the **Base Power** of the move used.
+- selfatkstat: `Type: Int.` This is the **Corresponding Offense Stat** of the Pokemon **using** the move.
+- foedefstat: `Type: Int.` This is the **Corresponding Defense Stat** of the Pokemon **taking** the damage.
+- OPTIONAL level: `Type: Int.` This is the **Level** of the Pokemon **using** the move. Defaults to 100.

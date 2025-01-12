@@ -1,0 +1,29 @@
+## ---=== Character Database Commands ===---
+## `/add_oc`
+This command adds data about a character into a **JSON file**, bound to your discord **User ID**.
+
+Parameters:
+- ocname: `Type: String.` This is the **nickname** for your character, and will also be the **index** of the character (lowercase). **The nickname can be edited later! The index, however, cannot.**
+- fullname: `Type: String.` This is the **full name** for your character, so do put the entire thing in there, First Middle Last!
+- species: `Type: String.` This is the **species** of the character. It'll be useful when you want to describe them later!
+- pronouns: `Type: String.` This is the field for **Pronouns**. Typically, we follow the `They/Them` format.
+- age: `Type: Integer.` This field is self-explanitory. It **only accepts integers** though.
+- type1: `Type: String.` This field will be the **Primary Type** of the character, let it be Stellar, Bird, Fighting, whatever!
+- OPTIONAL type2: `Type: String.` see: type1, **Secondary Type**.
+- OPTIONAL teratype: `Type: String.` see: type1, **Terastal Type**.
+- OPTIONAL nature: `Type: String.` This field will be the nature of your character. It's just cosmetic and does nothing though.
+
+By the way, you might want to know this command pile:
+## `/update_oc_...`
+These commands **can edit** the specifics of a character.
+Namely:
+`/update_oc_info` for the Info.
+`/update_oc_basestats` for the Base Stats.
+`/update_oc_ivs` for the IVs.
+`/update_oc_evs` for the EVs.
+`/update_oc_moves` for the Moves.
+`/update_oc_ability` for the Abilities.
+`/update_oc_items` for the Items.
+
+Parameters:
+- All over the place. It's trial and error, but I think the names of each parameter is quite simple to understand.

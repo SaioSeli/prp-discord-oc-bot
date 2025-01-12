@@ -1,0 +1,7 @@
+## ---=== Character Database Commands ===---
+## `/check_oc`
+This command **lists the specifics** of the character selected.
+
+Parameters:
+- ocindex: `Type: String.` This will be the **OC Index** of your character. If you don't know it, just run `/oc_list`!
+- OPTIONAL userid: `Type: String.` This will be the **User ID** of the person you'll want to see the list of. If it's left blank, the ID will be of **the one who runs the command**.

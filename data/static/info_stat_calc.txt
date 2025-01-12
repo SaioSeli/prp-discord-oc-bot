@@ -1,0 +1,12 @@
+## ---=== Battle Commands ===---
+## `/stat_calc`
+This command calculates **a stat** with specific parameters.
+
+Parameters:
+- level: `Type: Int.` This is the **Level** of the Pokemon. It's IMPORTANT!
+- basestat: `Type: Int.` This is the **Base Stat** of the Pokemon. It's specifically the one you need to calculate.
+- ishealth: `Type: Bool.` This determines the stat calculation, and changes it to the HP Stat calculation if set to True.
+- iv: `Type: Int.` IV for the stat. Defaults to 20.
+- ev: `Type: Int.` EV for the stat. Defaults to 0.
+- nature: `Type: Int.` This is the **Nature Mod** of the Pokemon. I can't summarize it here, read the parameter description.
+- stages: `Type: Int.` This is the **Stat Stage Boost** of the Pokemon. Ranges from -6 to +6.

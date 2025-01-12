@@ -1,0 +1,6 @@
+## ---=== Fun Commands ===---
+## `/owoify`
+OwO :3 Nyaahh~~
+
+Parameters:
+- stwing `Type: String.` You know what to do~

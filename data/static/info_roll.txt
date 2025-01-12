@@ -1,0 +1,7 @@
+## ---=== Fun Commands ===---
+## `/roll`
+This is a dice roll simulator. You can use it to simulate accuracy.
+
+Parameters:
+- faces: `Type: Int.` This is the amount of **faces each dice has**.
+- rolls: `Type: Int.` This is the amount of **dices that are rolled**.

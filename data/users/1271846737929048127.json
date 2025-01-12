@@ -1,0 +1,65 @@
+{
+    "ID": 1271846737929048127,
+    "OCs": {
+        "dexter": {
+            "Name": "Dexter",
+            "FullName": "Dexter Atzukato",
+            "Species": "Leafeon",
+            "Pronouns": "He/Him",
+            "Age": 25,
+            "Type": [
+                "Grass",
+                "",
+                "Dark"
+            ],
+            "Stats": {
+                "BASE": {
+                    "HP": 65,
+                    "ATK": 110,
+                    "DEF": 130,
+                    "SPC": 60,
+                    "RES": 65,
+                    "AGI": 95
+                },
+                "IV": {
+                    "HP": 20,
+                    "ATK": 20,
+                    "DEF": 20,
+                    "SPC": 20,
+                    "RES": 20,
+                    "AGI": 20
+                },
+                "EV": {
+                    "HP": 0,
+                    "ATK": 0,
+                    "DEF": 0,
+                    "SPC": 0,
+                    "RES": 0,
+                    "AGI": 0
+                }
+            },
+            "Ability": "None",
+            "Innates": {
+                "Innate1": "None",
+                "Innate2": "None",
+                "Innate3": "None"
+            },
+            "Item1": "Transformation Amulet",
+            "Item2": "Fusion Scarf (W/ Dusk Only)",
+            "Moves": {
+                "Normal": [
+                    "Leaf Blade",
+                    "Trailblaze",
+                    "Tera Crush",
+                    "Arial Ace",
+                    "Double Team",
+                    "Tera Blast"
+                ],
+                "Ultimate": [
+                    "Solar Fist"
+                ]
+            },
+            "Nature": "Lonely"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+## ---=== Character Database Commands ===---
+## `/oc_list`
+This command lists the **OCs registered** to the **User ID** attached.
+
+Parameters:
+- OPTIONAL userid: `Type: String.` This will be the **User ID** of the person you'll want to see the list of. If it's left blank, the ID will be of **the one who runs the command**.

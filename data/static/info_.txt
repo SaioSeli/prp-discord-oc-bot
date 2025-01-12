@@ -1,0 +1,8 @@
+**Hello!** Thanks for using the PRP OC Storage Bot!
+I'm **Saio (saioseli)**, and it's a pleasure to have you using this bot to store data about your OCs. If you'd like to use the code on its own, it's available on **[github](https://github.com/SaioSeli/prp-discord-oc-bot)**, just remember, **do not share your Bot Token with other people!**
+
+There is a video tutorial where **Duckles (duckletonthethird)** explains the commands in a(n) (un)watchable format. **[Video Link.](https://youtu.be/0Q5gxqdQWiM)**
+But if you want to use the bot directly for the info for a specific command, just write the command inside the **command** (`Type: Int`) parameter.
+I reccomend starting out with `/add_oc`. You'll get the hang of it, I trust.
+
+By the way, if you haven't already, enable **Developer Mode** in your options, it allows you to **copy the User ID** of a member by one **Right-Click**!~

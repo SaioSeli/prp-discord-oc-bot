@@ -59,7 +59,67 @@
                     "<:TypeFire:1233102381261131981> Fists of Fury"
                 ]
             },
-			"Nature": ""
+            "Nature": ""
+        },
+        "test": {
+            "Name": "test",
+            "FullName": "Testachu",
+            "Species": "Pikachu",
+            "Pronouns": "He/Him",
+            "Age": 19,
+            "Type": [
+                "Electric",
+                "",
+                "Fire"
+            ],
+            "Stats": {
+                "BASE": {
+                    "HP": 0,
+                    "ATK": 0,
+                    "DEF": 0,
+                    "SPC": 0,
+                    "RES": 0,
+                    "AGI": 0
+                },
+                "IV": {
+                    "HP": 20,
+                    "ATK": 20,
+                    "DEF": 20,
+                    "SPC": 20,
+                    "RES": 20,
+                    "AGI": 20
+                },
+                "EV": {
+                    "HP": 0,
+                    "ATK": 0,
+                    "DEF": 0,
+                    "SPC": 0,
+                    "RES": 0,
+                    "AGI": 0
+                }
+            },
+            "Ability": "None",
+            "Innates": {
+                "Innate1": "None",
+                "Innate2": "None",
+                "Innate3": "None"
+            },
+            "Item1": "Gun",
+            "Item2": "Bullets",
+            "Moves": {
+                "Normal": [
+                    "TestBeam",
+                    "None",
+                    "None",
+                    "None",
+                    "None",
+                    "None"
+                ],
+                "Ultimate": [
+                    "None"
+                ]
+            },
+            "Nature": ""
         }
     }
 }
