@@ -7,6 +7,7 @@ import discord
 from discord.ext import commands
 
 bot = commands.Bot()
+print(f'Logged in as bot \"{bot.user}\"')
 
 @bot.slash_command(
     name = "roll",
@@ -140,7 +141,7 @@ async def check_move(
         await ctx.respond(f"## __{nameMove}__\n**{typeEmote}{typing}-Type {cat} Move**\n- {bp} Base Power\n- {pp} PP ({maxpp} Max)\n- {acc}\n> {desc}\n- Targets {target}.\n{ult}\n---Effects---\n{effectsString}")
         print(f'outputted move {nameMove}.')
     else:
-        await ctx.respond(f"The move **__{nameMove}__** does not exist in the database! Please kindly add it!")
+        await ctx.respond(f"The move **__{nameMove}__** doesn\'t exist in the database! Please kindly add it with `/add_move {moveindex}`!")
         print(f'tried to output move {nameMove} but it does not exist.')
 
 @bot.slash_command(
@@ -252,7 +253,7 @@ async def fix_effects(
         await ctx.respond(f"{movename}'s effects fixed, please run `/check_move {moveindex}` to verify.")
     else:
         print(f'tried to edit move {moveindex} but it doesn\'t exist.')
-        await ctx.respond(f"Move {moveindex} does not exist!")
+        await ctx.respond(f"Move {moveindex} doesn\'t exist in the database! Please kindly add it with `/add_move {moveindex}`!")
 
 @bot.slash_command(
     name = "update_move",
@@ -311,7 +312,7 @@ async def update_move(
         await ctx.respond(f"{movename}'s data updated, please run `/check_move {moveindex}` to verify.")
     else:
         print(f'tried to edit move {moveindex} but it doesn\'t exist.')
-        await ctx.respond(f"Move {moveindex} does not exist!")
+        await ctx.respond(f"Move {moveindex} doesn\'t exist in the database! Please kindly add it with `/add_move {moveindex}`!")
 
 @bot.slash_command(
     name = "damage_calc",
@@ -663,7 +664,7 @@ async def oc_list(
         cur_handleID = str(data["ID"])
         ocList = ""
         for cur_OC in data["OCs"]:
-            ocList = ocList + data["OCs"][cur_OC]["Name"] + f" (Identifier: {cur_OC}), "
+            ocList = ocList + data["OCs"][cur_OC]["Name"] + f" (Index: {cur_OC}), "
         ocList = ocList + "GAY...WHAT...HOWDIDYOUGUESSTHIS67894320"
         ocList = ocList.replace(", GAY...WHAT...HOWDIDYOUGUESSTHIS67894320", "")
         await ctx.respond(f"User <@{cur_handleID}> has the following OCs.\n## {ocList}")
@@ -733,14 +734,14 @@ async def add_oc(
 
     if ocIndex in dictObj["OCs"]:
         name = dictObj["OCs"][ocIndex]["FullName"]
-        await ctx.respond(f"Character {fullname} already exists as {name}! (Identifier: {ocIndex})")
+        await ctx.respond(f"Character {fullname} already exists as {name}! (Index: {ocIndex})")
         print(f'tried to add OC {fullname} into the database \"{cur_handleID}.json\" but it already exists as {name}.')
     else:
         dictObj["OCs"].update(emptyOCDict)
         with open(filename, 'w') as json_file:
             json.dump(dictObj, json_file, indent=4, separators=(',',': '))
         print(f'added OC {fullname} (Index {ocIndex}) into the database \"{cur_handleID}.json\".')
-        await ctx.respond(f"Added character {fullname} (Identifier: {ocIndex}) into your database.\nPlease add the other data pieces with the `/update_oc_...` commands.")
+        await ctx.respond(f"Added character {fullname} (Index: {ocIndex}) into your database.\nPlease add the other data pieces with the `/update_oc_...` commands.")
 
 @bot.slash_command(
     name = "del_oc",
@@ -1133,7 +1134,7 @@ async def info(
     command: discord.Option(discord.SlashCommandOptionType.string, default="")
 ):
     command = command.replace("/","")
-    filename = "./data/static/info_"+command+".txt"
+    filename = "./data/static/info/info_"+command+".txt"
     tempString = ""
     
     # Check if file exists
@@ -1171,8 +1172,32 @@ async def owoify(
     await ctx.respond(tempstring)
     print(f'OwOified \"{stwing}\".\nOutput:\n{tempstring}')
 
+@bot.slash_command(
+    name = "suggest_features",
+    description = "Help us (me) build the bot and help me add features by suggesting them!"
+)
+async def suggest_features(
+    ctx,
+    feature: discord.Option(discord.SlashCommandOptionType.string)
+):
+    print(f'user {ctx.author} (ID: {ctx.author.id} would like to suggest a feature, adding it to \"./data/static/wanted_features.txt\".')
+    filename = "./data/static/wated_features.txt"
+    tempString = ""
+    
+    if path.isfile(filename) is False:
+        raise Exception("File not found")
+        print(f'\"wanted_features.txt\" does not exist. creating new file...')
+        newfile = open(filename, "x")
+        newfile.close()
+    addtofile = open(filename, "a") 
+    addtofile.write(f"\nuser: {ctx.author}\nID: {ctx.author.id}\nwanted feature:\n{feature}\n")
+    addtofile.close()
+    await ctx.respond("Your feature has been registered! I, Saio, will ping you when I add the feature, if at all.")
 
-bot.run("BOT_TOKEN")
+
+
+
+bot.run("token")
 
 #ApplicationID = 1327538111999377418
-#Token = GITHUB_SECRET_ENCODE
+#Token = string
