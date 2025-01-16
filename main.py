@@ -643,7 +643,7 @@ async def check_oc(
             print(f'outputted OC {ocName}.')
     if oc not in data["OCs"]:
         await ctx.respond(f"OC {oc} does not exist in your/their database!")
-        print(f'tried to output OC {oc} but it does not exist in database \"{cur_handleID}.json\".')
+        print(f'tried to output OC {oc} but it does not exist in database \"{filename}\".')
 
 @bot.slash_command(
     name = "oc_list",
@@ -735,12 +735,12 @@ async def add_oc(
     if ocIndex in dictObj["OCs"]:
         name = dictObj["OCs"][ocIndex]["FullName"]
         await ctx.respond(f"Character {fullname} already exists as {name}! (Index: {ocIndex})")
-        print(f'tried to add OC {fullname} into the database \"{cur_handleID}.json\" but it already exists as {name}.')
+        print(f'tried to add OC {fullname} into the database \"{filename}\" but it already exists as {name}.')
     else:
         dictObj["OCs"].update(emptyOCDict)
         with open(filename, 'w') as json_file:
             json.dump(dictObj, json_file, indent=4, separators=(',',': '))
-        print(f'added OC {fullname} (Index {ocIndex}) into the database \"{cur_handleID}.json\".')
+        print(f'added OC {fullname} (Index {ocIndex}) into the database \"{filename}\".')
         await ctx.respond(f"Added character {fullname} (Index: {ocIndex}) into your database.\nPlease add the other data pieces with the `/update_oc_...` commands.")
 
 @bot.slash_command(
@@ -766,13 +766,13 @@ async def del_oc(
                     json.dump(data, json_file, indent=4, separators=(',',': '))
                 print('Successfully written to the JSON file')
                 await ctx.respond(f"Character {fullname} successfully deleted!")
-                print(f'deleted OC {fullname} (Index {ocindex}) from the database \"{cur_handleID}.json\".')
+                print(f'deleted OC {fullname} (Index {ocindex}) from the database \"{filename}\".')
             else:
                 await ctx.respond(f"Character {fullname} has a different name, please type in the Full Name after the OC Index to verify this isn't a mistake.")
-                print(f'tried to delete OC {fullname} (Index {ocindex}) from the database \"{cur_handleID}.json\" but failed safety check.')
+                print(f'tried to delete OC {fullname} (Index {ocindex}) from the database \"{filename}\" but failed safety check.')
         else:
             await ctx.respond(f"Character {fullname} does not exist!")
-            print(f'tried to delete OC {fullname} (Index {ocindex}) from the database \"{cur_handleID}.json\" but it does not exist.')
+            print(f'tried to delete OC {fullname} (Index {ocindex}) from the database \"{filename}\" but it does not exist.')
 
 @bot.slash_command(
     name = "update_oc_ability",
@@ -793,23 +793,23 @@ async def update_oc_ability(
     if path.isfile(filename) is False:
         raise Exception("File not found")
         await ctx.respond("Please use the command `/add_oc` first!")
-        print(f'tried to edit ABILITIES of OC with Index {ocIndex}, but the database \"{cur_handleID}.json\" does not exist.')
+        print(f'tried to edit ABILITIES of OC with Index {ocIndex}, but the database \"{filename}\" does not exist.')
     
     # Read JSON file
     with open(filename) as fp:
         dictObj = json.load(fp)
     if ocindex in dictObj["OCs"]:
         if ability != "None":
-            print(f'edited ABILITIES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\Ability -> {ability}')
+            print(f'edited ABILITIES of OC with Index {ocIndex} in database \"{filename}\".\nAbility -> {ability}')
             dictObj["OCs"][ocindex]["Ability"] = ability
         if innate1 != "None":
-            print(f'edited ABILITIES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\Innate 1 -> {innate1}')
+            print(f'edited ABILITIES of OC with Index {ocIndex} in database \"{filename}\".\nInnate 1 -> {innate1}')
             dictObj["OCs"][ocindex]["Innates"]["Innate1"] = innate1
         if innate2 != "None":
-            print(f'edited ABILITIES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\Innate 2 -> {innate2}')
+            print(f'edited ABILITIES of OC with Index {ocIndex} in database \"{filename}\".\nInnate 2 -> {innate2}')
             dictObj["OCs"][ocindex]["Innates"]["Innate2"] = innate2
         if innate3 != "None":
-            print(f'edited ABILITIES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\Innate 3 -> {innate3}')
+            print(f'edited ABILITIES of OC with Index {ocIndex} in database \"{filename}\".\nInnate 3 -> {innate3}')
             dictObj["OCs"][ocindex]["Innates"]["Innate3"] = innate3
         fullname = dictObj["OCs"][ocindex]["FullName"]
         with open(filename, 'w') as json_file:
@@ -818,7 +818,7 @@ async def update_oc_ability(
         await ctx.respond(f"Updated character {fullname} in your database.")
     else:
         await ctx.respond(f"Character {ocindex} does not exist!")
-        print(f'tried to edit ABILITIES of OC with Index {ocIndex}, but it does not exist in the database \"{cur_handleID}.json\".')
+        print(f'tried to edit ABILITIES of OC with Index {ocIndex}, but it does not exist in the database \"{filename}\".')
 
 @bot.slash_command(
     name = "update_oc_moves",
@@ -842,32 +842,32 @@ async def update_oc_move(
     if path.isfile(filename) is False:
         raise Exception("File not found")
         await ctx.respond("Please use the command `/add_oc` first!")
-        print(f'tried to edit MOVES of OC with Index {ocIndex}, but the database \"{cur_handleID}.json\" does not exist.')
+        print(f'tried to edit MOVES of OC with Index {ocIndex}, but the database \"{filename}\" does not exist.')
     
     # Read JSON file
     with open(filename) as fp:
         dictObj = json.load(fp)
     if ocindex in dictObj["OCs"]:
         if move1 != "Struggle":
-            print(f'edited MOVES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nMove 1 -> {move1}')
+            print(f'edited MOVES of OC with Index {ocIndex} in database \"{filename}\".\nMove 1 -> {move1}')
             dictObj["OCs"][ocindex]["Moves"]["Normal"][0] = move1
         if move2 != "None":
-            print(f'edited MOVES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nMove 2 -> {move2}')
+            print(f'edited MOVES of OC with Index {ocIndex} in database \"{filename}\".\nMove 2 -> {move2}')
             dictObj["OCs"][ocindex]["Moves"]["Normal"][1] = move2
         if move3 != "None":
-            print(f'edited MOVES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nMove 3 -> {move3}')
+            print(f'edited MOVES of OC with Index {ocIndex} in database \"{filename}\".\nMove 3 -> {move3}')
             dictObj["OCs"][ocindex]["Moves"]["Normal"][2] = move3
         if move4 != "None":
-            print(f'edited MOVES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nMove 4 -> {move4}')
+            print(f'edited MOVES of OC with Index {ocIndex} in database \"{filename}\".\nMove 4 -> {move4}')
             dictObj["OCs"][ocindex]["Moves"]["Normal"][3] = move4
         if move5 != "None":
-            print(f'edited MOVES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nMove 5 -> {move5}')
+            print(f'edited MOVES of OC with Index {ocIndex} in database \"{filename}\".\nMove 5 -> {move5}')
             dictObj["OCs"][ocindex]["Moves"]["Normal"][4] = move5
         if move6 != "None":
-            print(f'edited MOVES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nMove 6 -> {move6}')
+            print(f'edited MOVES of OC with Index {ocIndex} in database \"{filename}\".\nMove 6 -> {move6}')
             dictObj["OCs"][ocindex]["Moves"]["Normal"][5] = move6
         if moveu != "None":
-            print(f'edited MOVES of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nUltimate -> {moveu}')
+            print(f'edited MOVES of OC with Index {ocIndex} in database \"{filename}\".\nUltimate -> {moveu}')
             dictObj["OCs"][ocindex]["Moves"]["Ultimate"][0] = moveu
         fullname = dictObj["OCs"][ocindex]["FullName"]
         with open(filename, 'w') as json_file:
@@ -875,7 +875,7 @@ async def update_oc_move(
         await ctx.respond(f"Updated character {fullname} in your database.")
     else:
         await ctx.respond(f"Character {ocindex} does not exist!")
-        print(f'tried to edit MOVES of OC with Index {ocIndex}, but it does not exist in the database \"{cur_handleID}.json\".')
+        print(f'tried to edit MOVES of OC with Index {ocIndex}, but it does not exist in the database \"{filename}\".')
 
 @bot.slash_command(
     name = "update_oc_items",
@@ -894,17 +894,17 @@ async def update_oc_items(
     if path.isfile(filename) is False:
         raise Exception("File not found")
         await ctx.respond("Please use the command `/add_oc` first!")
-        print(f'tried to edit ITEMS of OC with Index {ocIndex}, but the database \"{cur_handleID}.json\" does not exist.')
+        print(f'tried to edit ITEMS of OC with Index {ocIndex}, but the database \"{filename}\" does not exist.')
     
     # Read JSON file
     with open(filename) as fp:
         dictObj = json.load(fp)
     if ocindex in dictObj["OCs"]:
         if item1 != "Empty":
-            print(f'edited ITEMS of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nItem1 -> {item1}')
+            print(f'edited ITEMS of OC with Index {ocIndex} in database \"{filename}\".\nItem1 -> {item1}')
             dictObj["OCs"][ocindex]["Item1"] = item1
         if item2 != "Empty":
-            print(f'edited ITEMS of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nItem2 -> {item2}')
+            print(f'edited ITEMS of OC with Index {ocIndex} in database \"{filename}\".\nItem2 -> {item2}')
             dictObj["OCs"][ocindex]["Item2"] = item2
         fullname = dictObj["OCs"][ocindex]["FullName"]
         with open(filename, 'w') as json_file:
@@ -912,7 +912,7 @@ async def update_oc_items(
         await ctx.respond(f"Updated character {fullname} in your database.")
     else:
         await ctx.respond(f"Character {ocindex} does not exist!")
-        print(f'tried to edit ITEMS of OC with Index {ocIndex}, but it does not exist in the database \"{cur_handleID}.json\".')
+        print(f'tried to edit ITEMS of OC with Index {ocIndex}, but it does not exist in the database \"{filename}\".')
 
 @bot.slash_command(
     name = "update_oc_basestats",
@@ -935,29 +935,29 @@ async def update_oc_basestats(
     if path.isfile(filename) is False:
         raise Exception("File not found")
         await ctx.respond("Please use the command `/add_oc` first!")
-        print(f'tried to edit BASE STAT of OC with Index {ocIndex}, but the database \"{cur_handleID}.json\" does not exist.')
+        print(f'tried to edit BASE STAT of OC with Index {ocIndex}, but the database \"{filename}\" does not exist.')
    
     # Read JSON file
     with open(filename) as fp:
         dictObj = json.load(fp)
     if ocindex in dictObj["OCs"]:
         if hp != 0:
-            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nHP -> {hp}')
+            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{filename}\".\nHP -> {hp}')
             dictObj["OCs"][ocindex]["Stats"]["BASE"]["HP"] = hp
         if attack != 0:
-            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nATK -> {attack}')
+            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{filename}\".\nATK -> {attack}')
             dictObj["OCs"][ocindex]["Stats"]["BASE"]["ATK"] = attack
         if defense != 0:
-            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nDEF -> {defense}')
+            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{filename}\".\nDEF -> {defense}')
             dictObj["OCs"][ocindex]["Stats"]["BASE"]["DEF"] = defense
         if specialatk != 0:
-            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nSPC -> {specialatk}')
+            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{filename}\".\nSPC -> {specialatk}')
             dictObj["OCs"][ocindex]["Stats"]["BASE"]["SPC"] = specialatk
         if specialdef != 0:
-            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nRES -> {specialdef}')
+            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{filename}\".\nRES -> {specialdef}')
             dictObj["OCs"][ocindex]["Stats"]["BASE"]["RES"] = specialdef
         if speed != 0:
-            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nAGI -> {speed}')
+            print(f'edited BASE STAT of OC with Index {ocIndex} in database \"{filename}\".\nAGI -> {speed}')
             dictObj["OCs"][ocindex]["Stats"]["BASE"]["AGI"] = speed
         fullname = dictObj["OCs"][ocindex]["FullName"]
         with open(filename, 'w') as json_file:
@@ -965,7 +965,7 @@ async def update_oc_basestats(
         await ctx.respond(f"Updated character {fullname} in your database.")
     else:
         await ctx.respond(f"Character {ocindex} does not exist!")
-        print(f'tried to edit BASE STAT of OC with Index {ocIndex}, but it does not exist in the database \"{cur_handleID}.json\".')
+        print(f'tried to edit BASE STAT of OC with Index {ocIndex}, but it does not exist in the database \"{filename}\".')
 
 @bot.slash_command(
     name = "update_oc_ivs",
@@ -988,7 +988,7 @@ async def update_oc_ivs(
     if path.isfile(filename) is False:
         raise Exception("File not found")
         await ctx.respond("Please use the command `/add_oc` first!")
-        print(f'tried to edit IVS of OC with Index {ocIndex}, but the database \"{cur_handleID}.json\" does not exist.')
+        print(f'tried to edit IVS of OC with Index {ocIndex}, but the database \"{filename}\" does not exist.')
     
     # Read JSON file
     with open(filename) as fp:
@@ -1000,7 +1000,7 @@ async def update_oc_ivs(
         dictObj["OCs"][ocindex]["Stats"]["IV"]["SPC"] = specialatk
         dictObj["OCs"][ocindex]["Stats"]["IV"]["RES"] = specialdef
         dictObj["OCs"][ocindex]["Stats"]["IV"]["AGI"] = speed
-        print(f'edited IVS of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\n HP -> {hp}\nATK -> {attack}\nDEF -> {defense}\nSPC -> {specialatk}\nRES -> {specialdef}\nAGI -> {speed}')
+        print(f'edited IVS of OC with Index {ocIndex} in database \"{filename}\".\n HP -> {hp}\nATK -> {attack}\nDEF -> {defense}\nSPC -> {specialatk}\nRES -> {specialdef}\nAGI -> {speed}')
         fullname = dictObj["OCs"][ocindex]["FullName"]
         with open(filename, 'w') as json_file:
             json.dump(dictObj, json_file, indent=4, separators=(',',': '))
@@ -1008,7 +1008,7 @@ async def update_oc_ivs(
         await ctx.respond(f"Updated character {fullname} in your database.")
     else:
         await ctx.respond(f"Character {ocindex} does not exist!")
-        print(f'tried to edit IVS of OC with Index {ocIndex}, but it does not exist in the database \"{cur_handleID}.json\".')
+        print(f'tried to edit IVS of OC with Index {ocIndex}, but it does not exist in the database \"{filename}\".')
 
 @bot.slash_command(
     name = "update_oc_evs",
@@ -1031,7 +1031,7 @@ async def update_oc_evs(
     if path.isfile(filename) is False:
         raise Exception("File not found")
         await ctx.respond("Please use the command `/add_oc` first!")
-        print(f'tried to edit EVS of OC with Index {ocIndex}, but the database \"{cur_handleID}.json\" does not exist.')
+        print(f'tried to edit EVS of OC with Index {ocIndex}, but the database \"{filename}\" does not exist.')
     
     # Read JSON file
     with open(filename) as fp:
@@ -1039,7 +1039,7 @@ async def update_oc_evs(
     if ocindex in dictObj["OCs"]:
         if hp+attack+defense+specialatk+specialdef+speed > 510:
             await ctx.respond("Sorry, but the value for all of your EV points added up has to be at most 510.")
-            print(f'tried to edit EVS of OC with Index {ocIndex} in database \"{cur_handleID}.json\", but the EV cap of 510 was exceeded.\n{hp}+{attack}+{defense}+{specialatk}+{specialdef}+{speed} = {hp+attack+defense+specialatk+specialdef+speed}.')
+            print(f'tried to edit EVS of OC with Index {ocIndex} in database \"{filename}\", but the EV cap of 510 was exceeded.\n{hp}+{attack}+{defense}+{specialatk}+{specialdef}+{speed} = {hp+attack+defense+specialatk+specialdef+speed}.')
         else:
             dictObj["OCs"][ocindex]["Stats"]["EV"]["HP"] = hp
             dictObj["OCs"][ocindex]["Stats"]["EV"]["ATK"] = attack
@@ -1047,14 +1047,14 @@ async def update_oc_evs(
             dictObj["OCs"][ocindex]["Stats"]["EV"]["SPC"] = specialatk
             dictObj["OCs"][ocindex]["Stats"]["EV"]["RES"] = specialdef
             dictObj["OCs"][ocindex]["Stats"]["EV"]["AGI"] = speed
-            print(f'edited EVS of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\n HP -> {hp}\nATK -> {attack}\nDEF -> {defense}\nSPC -> {specialatk}\nRES -> {specialdef}\nAGI -> {speed}')
+            print(f'edited EVS of OC with Index {ocIndex} in database \"{filename}\".\n HP -> {hp}\nATK -> {attack}\nDEF -> {defense}\nSPC -> {specialatk}\nRES -> {specialdef}\nAGI -> {speed}')
             fullname = dictObj["OCs"][ocindex]["FullName"]
             with open(filename, 'w') as json_file:
                 json.dump(dictObj, json_file, indent=4, separators=(',',': '))
             await ctx.respond(f"Updated character {fullname} in your database.")
     else:
         await ctx.respond(f"Character {ocindex} does not exist!")
-        print(f'tried to edit EVS of OC with Index {ocIndex}, but it does not exist in the database \"{cur_handleID}.json\".')
+        print(f'tried to edit EVS of OC with Index {ocIndex}, but it does not exist in the database \"{filename}\".')
 
 @bot.slash_command(
     name = "update_oc_info",
@@ -1080,7 +1080,7 @@ async def update_oc_items(
     if path.isfile(filename) is False:
         raise Exception("File not found")
         await ctx.respond("Please use the command `/add_oc` first!")
-        print(f'tried to edit INFO of OC with Index {ocIndex}, but the database \"{cur_handleID}.json\" does not exist.')
+        print(f'tried to edit INFO of OC with Index {ocIndex}, but the database \"{filename}\" does not exist.')
     
     # Read JSON file
     with open(filename) as fp:
@@ -1088,31 +1088,31 @@ async def update_oc_items(
     if ocindex in dictObj["OCs"]:
         fullnameOLD = dictObj["OCs"][ocindex]["FullName"]
         if name != "None":
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nName -> {name}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\nName -> {name}')
             dictObj["OCs"][ocindex]["Name"] = name
         if fullname != "None":
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nFullName {fullnameOLD} -> {fullname}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\nFullName {fullnameOLD} -> {fullname}')
             dictObj["OCs"][ocindex]["FullName"] = fullname
         if species != "None":
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nSpecies -> {species}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\nSpecies -> {species}')
             dictObj["OCs"][ocindex]["Species"] = species
         if pronouns != "None":
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nPronouns -> {pronouns}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\nPronouns -> {pronouns}')
             dictObj["OCs"][ocindex]["Pronouns"] = pronouns
         if age != -1:
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\n age -> {age}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\n age -> {age}')
             dictObj["OCs"][ocindex]["Age"] = age
         if type1 != "None":
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nType1 -> {type1}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\nType1 -> {type1}')
             dictObj["OCs"][ocindex]["Type"][0] = type1
         if type2 != "":
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nType2 -> {type2}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\nType2 -> {type2}')
             dictObj["OCs"][ocindex]["Type"][1] = type2
         if type3 != "":
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nTera -> {type3}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\nTera -> {type3}')
             dictObj["OCs"][ocindex]["Type"][1] = type3
         if nature != "":
-            print(f'edited INFO of OC with Index {ocIndex} in database \"{cur_handleID}.json\".\nNature -> {nature}')
+            print(f'edited INFO of OC with Index {ocIndex} in database \"{filename}\".\nNature -> {nature}')
             dictObj["OCs"][ocindex]["Nature"] = nature
         with open(filename, 'w') as json_file:
             json.dump(dictObj, json_file, indent=4, separators=(',',': '))
@@ -1122,7 +1122,7 @@ async def update_oc_items(
             await ctx.respond(f"Updated character {fullnameOLD} in your database.")
     else:
         await ctx.respond(f"Character {ocindex} does not exist!")
-        print(f'tried to edit INFO of OC with Index {ocIndex}, but it does not exist in the database \"{cur_handleID}.json\".')
+        print(f'tried to edit INFO of OC with Index {ocIndex}, but it does not exist in the database \"{filename}\".')
 
 
 @bot.slash_command(

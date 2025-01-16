@@ -38,11 +38,11 @@
                     "AGI": 128
                 }
             },
-            "Ability": "Simple",
+            "Ability": "North Wind",
             "Innates": {
-                "Innate1": "Diamond Scales",
-                "Innate2": "North Gale",
-                "Innate3": "Technician"
+                "Innate1": "Snow Warning",
+                "Innate2": "Slush Rush",
+                "Innate3": "Ice Scales"
             },
             "Item1": "Icicle Knife",
             "Item2": "Empty",
